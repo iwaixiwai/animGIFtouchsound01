@@ -66,9 +66,22 @@ function draw()
     index = maxFrame;
   }
   
-  if(index != index_old) sound.play();
-  if(index==56 && index_old < 56) sound2.play();
-  if(index==56 && index_old > 56) sound3.play();
+  if(index != index_old)
+  {
+    sound.stop();
+    sound.play();
+  }
+  if(index==56 && index_old < 56)
+  {
+    sound2.stop();
+    sound2.play();
+  }
+  
+  if(index==56 && index_old > 56)
+  {
+    sound3.stop();
+    sound3.play();
+  }
      
   // Set the GIF's frame.
   gif.setFrame(index);
